@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>QUIZ TIME!!!!!!</h1>
+    <p>Knock Knock.</p>
+    <p>Who's there?</p> 
+
+    <div class="radio">
+        <label>
+            <input type="radio" name="q1" value="Ur Mom">
+            Ur Mom
+        </label>
+    </div>
+    
+     <div class="radio">
+        <label>
+            <input type="radio" name="q1" value="Abraham Lincoln">
+            Abraham Lincoln.
+        </label>
+    </div>
+    
+     <div class="radio">
+        <label>
+            <input type="radio" name="q1" value="Geroge Bush">
+            Geroge Bush.
+        </label>
+    </div>
+    
+    <div class="radio">
+        <label>
+            <input type="radio" name="q1" value="John Cena">
+           John Cena.
+        </label>
+    </div>
+    
+    <div class="radio">
+        <label>
+            <input type="radio" name="q1" value="John F. Kennedy">
+            John F. Kennedy
+        </label>
+    </div>
+ 
+    <p>Who can you make you cookies?</p> 
+    <div class="radio">
+        <label>
+            <input type="radio" name="q2" value="Ur Mom">
+            Ur Mom
+        </label>
+    </div>
+    
+     <div class="radio">
+         <label>
+            <input type="radio" name="q2" value="Abraham Lincoln">
+            Abraham Lincoln.
+        </label>
+    </div>
+    
+     <div class="radio">
+        <label>
+            <input type="radio" name="q2" value="Geroge Bush">
+            Geroge Bush.
+        </label>
+    </div>
+    
+    <div class="radio">
+        <label>
+            <input type="radio" name="q2" value="John Cena">
+           John Cena.
+        </label>
+    </div>
+    
+    <div class="radio">
+        <label>
+            <input type="radio" name="q2" value="John F. Kennedy">
+            John F. Kennedy
+        </label>
+    </div>
+    
+     <p> Who should be the next Presedent of the World</p>
+    
+    <div class="radio">
+        <label>
+            <input type="radio" name="q3" value="Ur Mom">
+            Ur Mom
+        </label>
+    </div>
+    
+     <div class="radio">
+        <label>
+            <input type="radio" name="q3" value="Abraham Lincoln">
+            Abraham Lincoln.
+        </label>
+    </div>
+    
+     <div class="radio">
+        <label>
+            <input type="radio" name="q3" value="Geroge Bush">
+            Geroge Bush.
+        </label>
+    </div>
+    
+    <div class="radio">
+        <label>
+            <input type="radio" name="q3" value="John Cena.">
+           John Cena.
+        </label>
+    </div>
+    
+    <div class="radio">
+        <label>
+            <input type="radio" name="q3" value="John F. Kennedy">
+            John F. Kennedy
+        </label>
+    </div>
+    
+     <p> I am ___. </p>
+     
+
+    <div class="radio">
+        <label>
+            <input type="radio" name="q4" value="Ur Mom">
+            Ur Mom
+        </label>
+    </div>
+    
+     <div class="radio">
+        <label>
+            <input type="radio" name="q4" value="Abraham Lincoln">
+            Abraham Lincoln.
+        </label>
+    </div>
+    
+     <div class="radio">
+        <label>
+            <input type="radio" name="q4" value="Geroge Bush">
+            Geroge Bush.
+        </label>
+    </div>
+    
+    <div class="radio">
+        <label>
+            <input type="radio" name="q4" value="John Cena">
+           John Cena.
+        </label>
+    </div>
+    
+    <div class="radio">
+        <label>
+            <input type="radio" name="q4" value="John F. Kennedy">
+            John F. Kennedy
+        </label>
+    </div>
+    <button>See Results</button>
+    <div class="alert alert-success hidden">
+        Your result is <strong id="result"></strong>
+    </div>
+    <script>
+        $(function() {
+            $('button').click(function() {
+                var count = {
+                    "Ur Mom": 0,
+                    "Abraham Lincoln": 0,
+                    "Geroge Bush": 0,
+                    'John Cena': 0,
+                    "John F. Kennedy": 0,
+                };
+                $(':checked').each(function(i, el) {
+                    var value = $(el).val();
+                    count[value]++;
+                });
+                var max = 0;
+                var result = '';
+                for (var key in count) {
+                    if (count[key] > max) {
+                        max = count[key];
+                        result = key
+                    }
+                }    
+                
+                $('#result').text(result);
+                $('.alert').removeClass('hidden');
+            });
+        });
+        
+    </script>
+</body>
+</html>
+
+
